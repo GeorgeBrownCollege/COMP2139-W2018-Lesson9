@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-offset-4 col-md-4">
             <div id="AlertFlash" class="alert alert-danger" runat="server" visible="false">
-                <asp:Label runat="server" ID="StatusLable"></asp:Label>
+                <asp:Label runat="server" ID="StatusLabel"></asp:Label>
             </div>
 
             <h1>Registration Page</h1>

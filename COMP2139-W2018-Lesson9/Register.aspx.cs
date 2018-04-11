@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// required for Identity and OWIN Security
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+
 namespace COMP2139_W2018_Lesson9
 {
     public partial class Register : System.Web.UI.Page
@@ -16,12 +21,46 @@ namespace COMP2139_W2018_Lesson9
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-
+            // Redirect back to the Defualt page
+            Response.Redirect("~/Default.aspx");
         }
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
+            // create new userStore and userManager objects
+            var userStore = new UserStore<IdentityUser>();
+            var userManager = new UserManager<IdentityUser>(userStore);
 
+            // create a new user object
+            var user = new IdentityUser()
+            {
+                UserName = UserNameTextBox.Text,
+                PhoneNumber = PhoneNumberTextBox.Text,
+                Email = EmailTextBox.Text
+            };
+
+            // create a new user in the db and store the results
+            IdentityResult result = userManager.Create(user, PasswordTextBox.Text);
+
+            //check if successfully registered
+            if(result.Succeeded)
+            {
+                // authenticate and login our new user
+                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+
+                // sign in the user
+                authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+
+                // Redirect the user
+                Response.Redirect("~/Contoso/Students.aspx");
+            }
+            else
+            {
+                // display error in the AlertFlash 
+                StatusLabel.Text = result.Errors.FirstOrDefault();
+                AlertFlash.Visible = true;
+            }
         }
     }
 }
