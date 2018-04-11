@@ -6,7 +6,7 @@
         <div class="col-md-offset-2 col-md-8">
 
             <h1>Student List</h1>
-            <a href="StudentDetails.aspx" class="btn btn-success btn-sm">
+            <a href="/Contoso/StudentDetails.aspx" class="btn btn-success btn-sm">
                 <i class="fa fa-plus"> Add Student</i>
             </a>
 
@@ -22,7 +22,7 @@
                     <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit"
                         NavigateUrl="StudentDetails.aspx" ControlStyle-CssClass="btn btn-primary btn-sm"
                         runat="server" DataNavigateUrlFields="StudentID"
-                        DataNavigateUrlFormatString="StudentDetails.aspx?StudentID={0}" />
+                        DataNavigateUrlFormatString="/Contoso/StudentDetails.aspx?StudentID={0}" />
 
                     <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete"
                         ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />

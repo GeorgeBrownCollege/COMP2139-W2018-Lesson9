@@ -48,7 +48,7 @@ namespace COMP2139_W2018_Lesson9
         protected void CancelButton_Click(object sender, EventArgs e)
         {
             // Redirect back to the students page
-            Response.Redirect("Students.aspx");
+            Response.Redirect("/Contoso/Students.aspx");
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace COMP2139_W2018_Lesson9
                 db.SaveChanges();
 
                 // Redirect back to the updated students page
-                Response.Redirect("Students.aspx");
+                Response.Redirect("/Contoso/Students.aspx");
             }
         }
     }

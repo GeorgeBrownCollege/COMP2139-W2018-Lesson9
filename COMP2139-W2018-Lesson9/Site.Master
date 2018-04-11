@@ -27,16 +27,16 @@
                     <a class="nav-link" href="About.aspx"><i class="fa fa-lg fa-info"></i> About</a>
                 </li>
                 <li runat="server" ID="Students" class="nav-item">
-                    <a class="nav-link" href="Students.aspx"><i class="fa fa-lg fa-graduation-cap"></i> Students</a>
+                    <a class="nav-link" href="/Contoso/Students.aspx"><i class="fa fa-lg fa-graduation-cap"></i> Students</a>
                 </li>
                 <li runat="server" ID="Courses" class="nav-item">
-                    <a class="nav-link" href="Courses.aspx"><i class="fa fa-lg fa-book"></i> Courses</a>
+                    <a class="nav-link" href="/Contoso/Courses.aspx"><i class="fa fa-lg fa-book"></i> Courses</a>
                 </li>
                 <li runat="server" ID="Instructors" class="nav-item">
-                    <a class="nav-link" href="Instructors.aspx"><i class="fa fa-lg fa-user-secret"></i> Instructors</a>
+                    <a class="nav-link" href="/Contoso/Instructors.aspx"><i class="fa fa-lg fa-user-secret"></i> Instructors</a>
                 </li>
                 <li runat="server" ID="Departments" class="nav-item">
-                    <a class="nav-link" href="Departments.aspx"><i class="fa fa-lg fa-users"></i> Departments</a>
+                    <a class="nav-link" href="/Contoso/Departments.aspx"><i class="fa fa-lg fa-users"></i> Departments</a>
                 </li>
             </ul>
         </div>
